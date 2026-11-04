@@ -1,0 +1,13 @@
+name: appsec-push-monitor
+on:
+  push:
+permissions:
+  contents: read
+jobs:
+  appsec-push-monitor:
+    name: appsec-push-monitor
+    uses: Ksghld/central-security-workflows-lab/.github/workflows/security-validation.yml@bc29eb95c826c36c029f558e8b817539f880b346
+    with:
+      scan_mode: monitor
+      application_id: APP-00427
+      policy_profile: default

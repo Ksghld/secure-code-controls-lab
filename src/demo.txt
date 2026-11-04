@@ -1,0 +1,2 @@
+This is harmless synthetic application content for the AppSec governance lab.
+The clean baseline intentionally contains no simulated security markers.

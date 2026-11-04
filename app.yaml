@@ -1,0 +1,4 @@
+# P0 demo metadata only. This file is PR-editable and is not authoritative.
+application_id: APP-00427
+service_id: payments-api
+metadata_trust: untrusted_demo

@@ -1,0 +1,9 @@
+{
+  "application_id": "APP-00427",
+  "repository": "synthetic/secure-code-controls-lab",
+  "repository_id": "10001",
+  "service_id": "sample-api",
+  "technical_owner": "platform-team",
+  "environment": "production",
+  "criticality": "high"
+}

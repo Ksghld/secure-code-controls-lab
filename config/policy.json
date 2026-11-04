@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "simulated": true,
+  "approved_release_refs": [
+    "main"
+  ],
+  "required_checks": {
+    "pull_request": "appsec-pr-gate",
+    "post_merge": "appsec-release-verify"
+  },
+  "expected_check_publisher": "github-actions",
+  "synthetic_markers": {
+    "SIMULATED_CRITICAL_SCA": "sca",
+    "SIMULATED_CRITICAL_SECRET": "secrets",
+    "SIMULATED_CRITICAL_IAC": "iac",
+    "SIMULATED_CRITICAL_SAST": "sast"
+  }
+}
