@@ -9,8 +9,8 @@ No application build, deployment, real credentials, or real vulnerability scanni
 - appsec-release.yml validates the actual main checkout SHA and synthetic release correlation.
 - All callers reference an immutable central reusable workflow. That workflow separately
   checks out its immutable central scanner/policy revision, using ubuntu-latest and read-only permissions.
-- application.json is compared with the centrally approved registry. Synthetic identity
-  10001 must be replaced with the authorized public repository ID through reviewed changes.
+- application.json is compared with the centrally approved registry and is bound to
+  this public repository's immutable GitHub repository ID.
 - src and optional infra are read as untrusted text, never executed. Scan/config errors fail closed.
 - The original local P0 scanner/tests remain for learning; GitHub does not execute that scanner.
 

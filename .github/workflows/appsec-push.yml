@@ -6,7 +6,7 @@ permissions:
 jobs:
   appsec-push-monitor:
     name: appsec-push-monitor
-    uses: Ksghld/central-security-workflows-lab/.github/workflows/security-validation.yml@bc29eb95c826c36c029f558e8b817539f880b346
+    uses: Ksghld/central-security-workflows-lab/.github/workflows/security-validation.yml@cd778ccf709701f9682c76cedbdd9ab096a0203c
     with:
       scan_mode: monitor
       application_id: APP-00427

@@ -63,7 +63,7 @@ def test_only_expected_p0_workflows_exist():
     for path in WORKFLOWS.glob("*.yml"):
         workflow = load_workflow(path.name)
         for job in workflow["jobs"].values():
-            assert job["uses"] == "Ksghld/central-security-workflows-lab/.github/workflows/security-validation.yml@bc29eb95c826c36c029f558e8b817539f880b346"
+            assert job["uses"] == "Ksghld/central-security-workflows-lab/.github/workflows/security-validation.yml@cd778ccf709701f9682c76cedbdd9ab096a0203c"
             assert "secrets" not in job
 
 

@@ -19,14 +19,15 @@ A content PASS is not authentication, publication authorization, or remote enfor
   and do not prove GitHub execution. New commits use generic non-deliverable lab attribution.
 - No remotes configured. No original source history is reachable in either repository.
   Virtual environments, caches and generated reports are ignored and excluded.
-- Public repository names are authorized lab destinations. Registry identity 10001,
-  resource account 000000000000, hashes, owners and deployment records are synthetic.
+- Public repository names and the application registry's GitHub repository ID are
+  authorized lab identifiers. Resource account 000000000000, hashes, owners and
+  deployment records remain synthetic.
 - Private administrator request and execution-context findings remain outside both repositories.
 - No new credentials, hosted secrets, self-hosted runners, or authorization changes.
 
 ## Immutable dependency review
-Caller workflow revision: bc29eb95c826c36c029f558e8b817539f880b346.
-Central scanner/policy revision: 262ebcae3eb2ab544be9d6808bae434f364074ef.
+Caller workflow revision: cd778ccf709701f9682c76cedbdd9ab096a0203c.
+Central scanner/policy revision: 76ce1e187c6e01e4cc30eaad75f26fd25f4dc774.
 Local tests compare these pinned files with the tested source, rather than only
 checking that strings look like SHAs. Human approval of revisions remains required.
 Official upstream release pages matched checkout v4.2.2 and upload-artifact v4.6.2
