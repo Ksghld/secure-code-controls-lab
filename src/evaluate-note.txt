@@ -1,0 +1,1 @@
+Harmless synthetic change used only to inspect the repository ruleset in Evaluate mode.
