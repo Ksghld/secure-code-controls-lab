@@ -1,6 +1,7 @@
 # P0 Hands-on Walkthrough
 
-This walkthrough is intentionally local-first. Publishing a repository and changing GitHub rules require separate approval.
+This walkthrough separates local synthetic exercises from actual hosted controls.
+See P0_REMOTE_VALIDATION.md for observed results and pending acceptance tests.
 
 ## 1. Understand the Git operations
 
@@ -46,13 +47,16 @@ git commit -m "Add harmless demo change"
 
 Repository creation and initial branch bootstrap are administrator operations.
 Use the environment's approved isolated worktree, broker-backed feature push,
-and draft-PR helpers. Do not establish a new authentication method, publish
+and ready-for-review PR helpers. Do not establish a new authentication method, publish
 credentials, push protected main, or merge without human review. Helper interfaces
 are environment-specific and must be discovered from approved documentation.
 
 ## 4. Verify successful and failed PR checks
 
-For a clean PR, `appsec-pr-gate` should complete successfully. Add a critical marker and push another commit; the existing PR receives a synchronize event and the gate should fail. Remove the marker and push again to restore a successful check.
+For a clean PR, the required `appsec-pr-gate / security-validation` check passes.
+Use a separate negative PR for a Critical marker and preserve its failed head. Do
+not merge it or repair it before capturing the head SHA, run and blocking state.
+A repaired PR's current green head is not evidence of a Critical finding being blocked.
 
 The workflow records:
 
@@ -70,9 +74,9 @@ First obtain a real `appsec-pr-gate` check run. Then open:
 1. Repository **Settings** -> **Rules** -> **Rulesets**.
 2. Create a branch ruleset targeting `main` only and set it active.
 3. Require a Pull Request before merging.
-4. Require one independent approving review. Enable stale-review dismissal or latest-reviewable-push approval when available.
+4. Require one independent approval, stale-review dismissal, latest-reviewable-push approval and CODEOWNER review after reviewed CODEOWNERS files reach main.
 5. Require the exact emitted check name observed in the Checks API, from GitHub Actions. Reusable workflow job names may be composite; do not assume the caller name alone.
-6. Restrict force pushes and branch deletion; minimize bypass actors.
+6. Restrict force pushes and branch deletion; keep the bypass list empty.
 
 Do not require PRs or checks on every feature branch. The push monitor observes pushes after they occur; it cannot prevent the push itself.
 
@@ -84,4 +88,7 @@ Direct-push negative tests require a separate authorized administrative exercise
 The execution agent must not attempt protected-main pushes. Record the test as
 NOT_VERIFIED until the authorized administrator supplies actual denial evidence.
 
-Without a second real reviewer, independent four-eyes behavior remains `NOT_VERIFIED`.
+Independent review was observed on PR #6. The separate PR #7 stale-approval test
+must record APPROVED at the first SHA, DISMISSED after the second reviewable push,
+new checks and blocked merge until another human review. Never approve or merge
+on the human reviewer's behalf.
