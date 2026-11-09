@@ -26,11 +26,15 @@ The scanner itself uses Python's standard library. See README_HE.md and docs/P0_
 All branches are monitored; protected merge destinations are enforced.
 A repository-level branch ruleset must target main and require the exact composite check
 name observed in GitHub's Checks API, with GitHub Actions as expected source.
-No such remote enforcement has yet been demonstrated.
+The application main ruleset is Active. MJ's clean PR, independent human review,
+central checks and exact post-merge SHA verification have run in GitHub.
+P0_REMOTE_VALIDATION.md records the evidence and remaining acceptance gaps.
 A contributor may replace the caller with a passing job of the same name.
 Centralization protects scanner content, not mandatory invocation. See ARCHITECTURE.md
 and KNOWN_LIMITATIONS.md for recommended independent production enforcement.
 
-Publication requires completed administrator onboarding and a passed content audit.
-Use only the approved feature-branch and human-review process. No automatic merge.
+Use the approved feature-branch and independent human-review process. No automatic
+approval or merge. CODEOWNERS enforcement and central protection require the
+reviewed files and repository-scoped settings in docs/governance/README.md.
+PUBLIC_RELEASE_AUDIT.md distinguishes source checks from historical metadata risks.
 
