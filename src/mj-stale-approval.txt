@@ -1,3 +1,4 @@
 Secure Code Controls Lab
 Synthetic stale-approval acceptance change.
 No production behavior is affected.
+Second synthetic revision: independent approval must be renewed.
