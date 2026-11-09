@@ -1,0 +1,2 @@
+Synthetic negative test only. Do not merge this branch.
+SIMULATED_CRITICAL_SCA
